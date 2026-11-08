@@ -36,7 +36,7 @@ const updateTarea = asyncHandler(async(req,res) => {
         res.status(401)
         throw new Error("Acceso no autorizado")
     } else {
-        const tareaUpdated = await Tarea.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        const tareaUpdated = await Tarea.findByIdAndUpdate(req.params.id, {descripcion: req.body.descripcion}, {returnDocument: 'after'})
         res.status(200).json(tareaUpdated)
     }
 })
@@ -56,7 +56,7 @@ const deleteTarea = asyncHandler(async(req,res) => {
         res.status(401)
         throw new Error("Acceso no autorizado")
     } else {
-        await Tarea.deleteOne(tarea)
+        await tarea.deleteOne()
         res.status(200).json({id: req.params.id})
     }
 })

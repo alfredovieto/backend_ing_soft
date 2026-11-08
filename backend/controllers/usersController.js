@@ -34,8 +34,7 @@ const crearUser = asyncHandler(async(req, res) => {
         res.status(201).json({
             _id: user.id,
             nombre: user.nombre,
-            email: user.email,
-            password: user.password
+            email: user.email
         })
     } else {
         res.status(400)
@@ -59,7 +58,7 @@ const loginUser = asyncHandler(async(req, res) => {
             token: generarToken(user.id)
         })
     } else {
-        res.status(403)
+        res.status(401)
         throw new Error("Credenciales Incorrectas")
     }
 })

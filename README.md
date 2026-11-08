@@ -36,7 +36,7 @@ Los endpoints privados requieren el encabezado `Authorization: Bearer <token>`. 
 
 | Método   | Ruta                  | Acceso  | Descripción            |
 | -------- | --------------------- | ------- | ---------------------- |
-| `POST`   | `/api/users/register` | Público | Registra un usuario    |
+| `POST`   | `/api/users`          | Público | Registra un usuario (también disponible en `/api/users/register`) |
 | `POST`   | `/api/users/login`    | Público | Inicia sesión          |
 | `GET`    | `/api/users/datos`    | Privado | Devuelve datos del usuario |
 | `GET`    | `/api/tareas`         | Privado | Lista las tareas       |
